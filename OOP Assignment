@@ -1,0 +1,18 @@
+class A:
+    def __init__(self, name, uid):
+        self.name = name
+        self.uid = uid
+        
+class B:
+    def __init__(self, pay, jobtitle):
+        self.pay = pay
+        self.jobtitle = jobtitle
+        
+class C(A,B):
+    def __init__(self, name, uid, pay, jobtitle, exp):
+        self.exp = exp
+        A.__init__(self, name, uid)
+        B.__init__(self, pay, jobtitle)
+        print('Name: {}, Pay: {}, Exp: {}'.format(self.name, self.pay, self.exp))
+        
+c = C('himanshu', 1001, 50000, 'manager', 5)
